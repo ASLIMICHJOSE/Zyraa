@@ -1,8 +1,61 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #fff;
-  color: #000;
+  background: #faf9f6;
+  font-family: 'Sansation', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.bar{
+   transition: 0.4 ease;
+}
+
+.menu-btn {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  left: 3%;
+  margin-top: 10px; /* bigger value = move down, smaller value = move up */
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 7px; /* space between text and icon */
+}
+
+.search-icon {
+  width: 19px;   /* same as Unicode icon size */
+  height: 19px;  /* keep it square */
+  object-fit: contain; /* prevents distortion */
+  cursor: pointer;
+}
+
+
+.menu-btn .bar {
+  position:relative;
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #222;
+  border-radius: 2px;
+  transition: transform 0.4s, opacity 0.4s;
+}
+.menu-btn.active .bar:nth-child(1) {
+  transform: translateY(11px) rotate(55deg);
+}
+
+.menu-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-55deg);
 }
 
 header {
@@ -10,18 +63,20 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #faf9f6;
 }
-
 .menu-icon {
   font-size: 24px;
   cursor: pointer;
 }
-
-.logo {
-  font-family: serif;
+.logo1 {
+  position: absolute;
+  right: 1070px;   /* distance from right side */
+  top: 12px;        /* adjust vertical position */
+  font-family: 'Sansation', sans-serif;
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 200px;
+  color: #000;
 }
 
 .nav-links {
@@ -30,21 +85,53 @@ header {
   font-size: 14px;
 }
 
-.search-bar {
-  text-align: center;
-  margin: 50px 0;
+.search-section {
+  max-width: 400px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  color: #444;
+  margin-bottom: 0px;
+   font-family: 'Sansation', sans-serif;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #444;
+  padding: 5px 0;
+}
+.just{
+  text-decoration: none;
+  color: rgb(80, 78, 74);
+}
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+  align-items: center;
+   font-family: 'Sansation', sans-serif;
+}
+.search-icon {
+  font-size: 18px;
+  color: #777;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.back1 {
+  display: block;
+  font-size: 16px;
+  color: #b3b3b3;
+  cursor: pointer;
+  margin-left: 1000px;
+  position: relative;
+  top: 70px; /* positive moves it down, negative moves it up */
 }
 
-.search-bar input {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  width: 300px;
-  text-align: center;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.back1:hover {
+  text-decoration: none;
 }
+
 
 .products {
   max-width: 1100px;
@@ -53,7 +140,7 @@ header {
 
 .products h3 {
   font-size: 12px;
-  color: #777;
+  color: #faf9f6;
   margin-bottom: 20px;
 }
 
@@ -65,5 +152,5 @@ header {
 
 .product-grid img {
   width: 100%;
-  background: #f9f9f9;
+  background: #faf9f6;
 }
