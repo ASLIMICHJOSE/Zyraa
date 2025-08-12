@@ -2,41 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Sansation:wght@300&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZARA Search</title>
+<title>Zyraa Search</title>
 <link rel="stylesheet" href="search.css">
 </head>
 <body>
-    
 <header>
   <div class="menu">
-        <button id="menu-btn" class="menu-btn" style="padding:0; background:none; border:none; cursor:pointer;">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+    <p id="menu-btn" class="menu-btn" style="padding:0; background:none; border:none; cursor:pointer;">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </p>
+  </div>
+  <div class="logo1">Zyraa</div>
+</header>
+<span class="back1" onclick="window.location.href='index.html'">Back</span>
+
+<!-- Right: Search -->
+<div class="nav-right">
+  <div class="search-section">
+   <div class="search-box">
+  <input type="text" placeholder="                                      Search">
+  <img src="img.jpg" alt="" class="search-icon">
+</div>
+
+    <div class="search-results">
+      <div class="recent">
+        <h4>Recent</h4>
+        <a href="whitetshirt.html" class="just">White shirts</a>
       </div>
-        <div class="logo">Zyraa</div>
-      <!-- Right: Search -->
-      <div class="nav-right">
-        <!-- Trigger Button -->
-        <a href="search.html" id="openSearch" class="search-trigger">Search</a>
-        <div id="searchPanel" class="search-container">       
-          <span class="search-icon"></span>
-          <div class="search-section">
-            <ul class="search-list">
-            </ul>
-          </div>  
-          <div class="search-section">
-            </ul>
-          </div>
-        </div>
+      <div class="suggestion">
+        <h4>Suggestion</h4>
+        <a href="pants.html" class="just">Pants</a>
+        <p>Necklace</p>
+        <a href ="shorts.html" class="just">Shorts</a>
+        <p>Shoes</p>
       </div>
     </div>
-  </header>
-<div class="search-bar">
-  <input type="text" placeholder="WHAT ARE YOU LOOKING FOR?">
+  </div>
 </div>
+
 
 <div class="products">
   <h3>YOU MAY BE INTERESTED IN</h3>
