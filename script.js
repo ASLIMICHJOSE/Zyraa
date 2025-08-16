@@ -8,6 +8,7 @@ openSearch.addEventListener('click', () => {
 });
 
 closeSearch.addEventListener('click', () => {
-  searchPanel.style.display = 'none';
+  searchPanel.style.display = 'none';/////
   openSearch.classList.remove('active'); // Hide underline
 });
+
