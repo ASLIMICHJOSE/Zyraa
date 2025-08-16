@@ -1,5 +1,5 @@
 :root{
-  --panel-width: 540px;
+  --panel-width: 540px;///
   --panel-bg: #fdf6f9; /* off-white inside panel */
   --card-white: #ffffff;
   --muted: #9b9b9b;
@@ -162,4 +162,5 @@ margin-right: 8%;
   font-size:11px;
   color:#9b9b9b;
 }
+
 
