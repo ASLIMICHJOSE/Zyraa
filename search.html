@@ -87,8 +87,6 @@
 
 <script>
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.querySelector(".search-box input");
     const searchIcon = document.querySelector(".search-box img");
@@ -99,11 +97,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Map of search keywords to pages
     const searchMap = {
         "pants": "pants.html",
+         "pant": "pants.html",
         "shorts": "short.html",
+        "short": "short.html",
         "jacket": "jacket.html",
         "tanktop": "tanktop.html",
-        "white shirt": "whiteshirt.html",
-        "page": "page.html"
+        "top": "tanktop.html",
+        "tshirt": "whitetshirt.html",
+        "shirt": "black.html",
+        "coat": "coat.html",
+        "dress": "dress.html",
+        "jeans": "jeans.html",
+        "partywear": "partywear.html",
+        "party": "partywear.html",
+        "skirt": "skirt.html",
+        "sweater": "sweater.html",
+        
     };
 
     // Load recent searches from localStorage
@@ -128,14 +137,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Normalize input to remove spaces and hyphens
+    function normalizeQuery(str) {
+        return str.trim().toLowerCase().replace(/\s|-/g, "");
+    }
+
     // Perform search
     function performSearch() {
-        const query = searchInput.value.trim().toLowerCase();
+        const query = normalizeQuery(searchInput.value);
         if (!query) return;
 
         // Update recent searches
-        recentSearches = recentSearches.filter(item => item.toLowerCase() !== query);
-        recentSearches.push(query);
+        recentSearches = recentSearches.filter(item => normalizeQuery(item) !== query);
+        recentSearches.push(searchInput.value.trim());
 
         if (recentSearches.length > 3) {
             recentSearches = recentSearches.slice(-3);
@@ -148,26 +162,22 @@ document.addEventListener("DOMContentLoaded", () => {
         if (searchMap[query]) {
             window.location.href = searchMap[query];
         } else {
-            alert("No results found for: " + query);
+            alert("No results found for: " + searchInput.value.trim());
         }
 
         searchInput.value = "";
-        searchResults.style.display = "none"; // Hide dropdown after search
+        searchResults.style.display = "none";
     }
 
-    // Show dropdown on click of search input or icon
+    // Show dropdown on click
     searchInput.addEventListener("click", () => {
-        if (searchResults.style.display !== "block") {
-            updateRecentUI();
-            searchResults.style.display = "block";
-        }
+        updateRecentUI();
+        searchResults.style.display = "block";
     });
 
     searchIcon.addEventListener("click", () => {
-        if (searchResults.style.display !== "block") {
-            updateRecentUI();
-            searchResults.style.display = "block";
-        }
+        updateRecentUI();
+        searchResults.style.display = "block";
         performSearch();
     });
 
@@ -186,28 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize UI
     updateRecentUI();
 });
-
- document.getElementById('menu-btn').addEventListener('click', function () {
-            this.classList.toggle('active');
-            document.getElementById('navMenu').classList.toggle('show');
-        });
-
-        document.getElementById("openSearch").addEventListener("click", function() {
-            window.location.href = "search.html";
-        });
-
-        document.querySelectorAll('#navMenu > span, #navMenu > p').forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth <= 767) {
-                    document.getElementById('navMenu').classList.remove('show');
-                    document.getElementById('menu-btn').classList.remove('active');
-                }
-            });
-        });
-
-
-
-
 
 </script>
 
@@ -1003,5 +991,6 @@ body {
 </style>
 <!-- ✅ Bootstrap JS Added -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
